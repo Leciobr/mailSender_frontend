@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: truenorth_app
+    command: bash -c "npm install && npm run build && serve -s build -l 3000"
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
